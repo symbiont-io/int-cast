@@ -1,6 +1,6 @@
 cabal-version:       1.12
 name:                int-cast
-version:             0.2.0.0
+version:             0.3.0.0
 
 synopsis:            Checked conversions between integral types
 homepage:            https://github.com/hvr/int-cast
@@ -30,7 +30,7 @@ library
                        TypeOperators
                        UndecidableInstances
 
-  build-depends:       base >=4.7 && <4.12
+  build-depends:       base == 4.16.*
   if !impl(ghc>=7.10)
     build-depends:     nats >=0.1 && <1.1
 
@@ -44,9 +44,9 @@ test-suite int-cast-test
   ghc-options:         -Wall
   build-depends:       int-cast
                      , base
-                     , QuickCheck                 ==2.11.*
-                     , test-framework             ==0.8.*
-                     , test-framework-quickcheck2 ==0.3.*
+                     , QuickCheck
+                     , test-framework
+                     , test-framework-quickcheck2
 
   if !impl(ghc>=7.10)
     build-depends: nats
